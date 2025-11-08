@@ -3,6 +3,7 @@ import type { Movie } from "../../src/types/movie";
 interface TMDBResponse {
   results: Movie[];
 }
+const apiUrl = "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
 const TMDB_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
 
 export async function fetchMovies(query: string): Promise<Movie[]> {
