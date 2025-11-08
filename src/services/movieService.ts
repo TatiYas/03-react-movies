@@ -1,12 +1,10 @@
 import axios from "axios";
 import type { Movie } from "../../src/types/movie";
-
-
-
 interface TMDBResponse {
   results: Movie[];
 }
-const token = import.meta.env.VITE_TMDB_TOKEN;
+const TMDB_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
+
 export async function fetchMovies(query: string): Promise<Movie[]> {
   if (!query.trim()) {
     console.warn("Порожній пошуковий запит - запит не буде виконано.");
